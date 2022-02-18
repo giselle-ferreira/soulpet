@@ -3,7 +3,7 @@
 <br>
 
 > ## Sobre o Projeto
-> Adição de CRUD (Create + Read + Update + Delete) de *Cupons* em Projeto de página de e-commerce em NodeJs, Express (com MongoDB) e Bootstrap 5, desenvolvido durante o curso de Desenvolvimento Fullstack da [SoulCode Academy](https://soulcodeacademy.org/). Implementação realizada pelo { Squad7 }
+> Desenvolvimento de CRUD (Create + Read + Update + Delete) em Projeto de PetShop desenvolvido em NodeJs (com MySQL), durante o curso de Desenvolvimento Fullstack da [SoulCode Academy](https://soulcodeacademy.org/). Realizado pelo { Squad2 }
 
 <br>
 <br>
