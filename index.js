@@ -8,8 +8,14 @@ const Owner = require('./models/Owner')
 const Pet = require('./models/Pet')
 const Scheduling = require('./models/Scheduling')
 
+//Routes
+const ownerRoutes = require("./routes/ownerRoutes")
 
+//Middleware
+app.use(express.urlencoded({ extended: true }))
+app.use(express.json())
 
+app.use("/owners", ownerRoutes)
 
 
 // { force: true }
