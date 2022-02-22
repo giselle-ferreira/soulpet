@@ -1,5 +1,6 @@
 const Scheduling = require('../models/Scheduling')
 const Pet = require('../models/Pet')
+const Owner = require('../models/Owner')
 
 class SchedulingController {
 
@@ -16,17 +17,24 @@ class SchedulingController {
 
     }
 
+    
     static async showScheduling(req, res) {
-        const scheduling = await Scheduling.findAll({include: Pet, where: { date: req.body.date } }, { raw: true })
+        const scheduling = await Scheduling.findAll(
+            {include:{
+                model: Pet,
+                include: Owner
+            }, where: { date: req.body.date }}, { raw: true })
 
-        res.status(202).json({ scheduling})
+        res.status(202).json( {scheduling})
     }
+
 
     static async listSchedulingToUpdate(req, res) {
         const scheduling = await Scheduling.findOne({where: { id: req.params.id  } })
 
         res.status(200).json({ scheduling})
     }
+
 
     static async updateScheduling(req, res) {
 
@@ -41,6 +49,7 @@ class SchedulingController {
         res.status(200).json({ message: `scheduling-${scheduling.service}-successfully-updated`})
    
     }
+
 
     static async deleteScheduling(req, res) {
 
