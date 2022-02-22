@@ -71,17 +71,13 @@ class OwnerController {
             res.status(406).json({ message: 'owner-parameter-null' })
             return;
         };
+   
+        await Owner.destroy({ include: Pet, where: { id: req.body.id } })
 
-        const pet = await Pet.findOne({ where: { OwnerId: req.body.id } })
-        if (pet) {
-            res.status(406).json({ message: 'cannot-delete-owner-with-pets-attached' })
-            return;
-        };
+        res.status(202).json({ message: `owner-${req.body.id}-and-pets-deleted` })
 
-        await Owner.destroy({ where: { id: req.body.id } })
-
-        res.status(202).json({ message: `owner-${req.body.id}-deleted` })
     }
 }
 
 module.exports = OwnerController
+
