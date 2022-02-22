@@ -27,15 +27,15 @@ class SchedulingController {
 
         const schedulingDate = await Scheduling.findAll({ include: Pet, where: { date: req.body.date } }, { raw: true })
 
-        let isValid = true
+        let isValidTime = true
 
         schedulingDate.forEach((t) => {
             if (scheduling.time === t.time) {
-                isValid = false
+                isValidTime = false
             };
         });
 
-        if (!isValid) {
+        if (!isValidTime) {
             res.status(402).json({ message: `time-${scheduling.time}-not-available` })
             return;
         }
@@ -54,7 +54,7 @@ class SchedulingController {
                 }, where: { date: req.body.date }
             }, { raw: true })
 
-        if (scheduling.length <= 0) {
+        if (!scheduling.length) {
             res.status(401).json({ message: `no-scheduling-on-${req.body.date}` })
             return
         } else {
