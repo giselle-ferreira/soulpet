@@ -25,8 +25,8 @@
 <img src="#" width="138" title="Danielle Santos"/>
 <img src="https://i.postimg.cc/05KMQ9r6/Whats-App-Image-2022-02-13-at-16-09-26.jpg" width="138" title="Giselle Ferreira"/>
 <img src="https://i.postimg.cc/zfDHXWR5/Whats-App-Image-2022-02-13-at-16-11-49.jpg" width="138" title="Luciano Barbosa"/>
-<img src="#" width="138" title="Ludmilla Khatarina"/>
-<img src="#" width="138" title="Samuel Batista"/>
+<img src="https://i.postimg.cc/ZRZMB7QQ/d76ae29f-4ac4-4a39-b6e9-80f24486541d.png" width="138" title="Ludmilla Khatarina"/>
+<img src="https://i.postimg.cc/tgFcgQBP/80af3bca-5f93-42d1-adb0-e414bf1c3c4f.png" width="138" title="Samuel Batista"/>
 </p>  
 
 <p align="left">
