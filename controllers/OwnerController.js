@@ -1,4 +1,5 @@
 const Owner = require("../models/Owner")
+const Pet = require("../models/Pet")
 
 class OwnerController {
 
@@ -11,18 +12,34 @@ class OwnerController {
             cpf: req.body.cpf,
         }
 
+        if (owner.name === "" || owner.phone === "" || owner.email === "" || owner.address === "" || owner.cpf === "") {
+            res.status(402).json({ message: 'owner-parameter-null' })
+            return;
+        };
+
         await Owner.create(owner)
-        res.status(202).json({ message: `owner-${owner.name}-created`})
+        res.status(202).json({ message: `owner-${owner.name}-created` })
     }
 
     static async showOwners(req, res) {
-        const owner = await Owner.findAll({ raw: true})
+        const owner = await Owner.findAll({ raw: true })
 
-        res.status(202).json(owner )
+        if (owner.length > 0) {
+            res.status(202).json(owner)
+        } else {
+            res.status(402).json({ message: 'list-owner-parameter-null' })
+            return;
+        };
+
     }
 
     static async listOwnerToUpdate(req, res) {
-        const owner = await Owner.findOne({ where: { id: req.params.id }})
+        const owner = await Owner.findOne({ where: { id: req.params.id } })
+
+        if (!owner) {
+            res.status(406).json({ message: 'owner-parameter-null' })
+            return;
+        };
 
         res.status(200).json(owner)
     }
@@ -36,15 +53,34 @@ class OwnerController {
             cpf: req.body.cpf,
         }
 
-        await Owner.update(owner, { where: { id: req.body.id }})
+        if (owner.name === "" || owner.phone === "" || owner.email === "" || owner.address === "" || owner.cpf === "") {
+            res.status(402).json({ message: 'owner-parameter-null' })
+            return;
+        };
+
+        await Owner.update(owner, { where: { id: req.body.id } })
+
         res.status(200).json({ message: `owner-${owner.name}-successfully-updated` })
 
     }
 
     static async deleteOwner(req, res) {
-        await Owner.destroy({ where: { id: req.body.id }})
 
-        res.status(202).json({ message: `owner-${req.body.id}-deleted`})
+        const owner = await Owner.findOne({ where: { id: req.body.id } })
+        if (!owner) {
+            res.status(406).json({ message: 'owner-parameter-null' })
+            return;
+        };
+
+        const pet = await Pet.findOne({ where: { OwnerId: req.body.id } })
+        if (pet) {
+            res.status(406).json({ message: 'cannot-delete-owner-with-pets-attached' })
+            return;
+        };
+
+        await Owner.destroy({ where: { id: req.body.id } })
+
+        res.status(202).json({ message: `owner-${req.body.id}-deleted` })
     }
 }
 
