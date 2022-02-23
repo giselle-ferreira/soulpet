@@ -22,11 +22,11 @@
 > ## Desenvolvedores { Squad2 } 🦸‍♀️🦸‍♂️
 
 <p align="left">
-<a href="https://www.github.com/giselle-ferreira" ><img src="https://i.postimg.cc/bJVNRqDk/dani.png" width="138" title="Danielle Santos"/></a> 
+<a href="https://www.github.com/Danielle-29" ><img src="https://i.postimg.cc/bJVNRqDk/dani.png" width="138" title="Danielle Santos"/></a> 
 <a href="https://www.github.com/giselle-ferreira" ><img src="https://i.postimg.cc/05KMQ9r6/Whats-App-Image-2022-02-13-at-16-09-26.jpg" width="138" title="Giselle Ferreira"/></a>  
-<a href="https://www.linkedin.com/in/giselleferreiras" ><img src="https://i.postimg.cc/zfDHXWR5/Whats-App-Image-2022-02-13-at-16-11-49.jpg" width="138" title="Luciano Barbosa"/></a> 
-<a href="https://www.linkedin.com/in/giselleferreiras" ><img src="https://i.postimg.cc/ZRZMB7QQ/d76ae29f-4ac4-4a39-b6e9-80f24486541d.png" width="138" title="Ludmilla Khatarina"/></a> 
-<a href="https://www.linkedin.com/in/giselleferreiras" ><img src="https://i.postimg.cc/tgFcgQBP/80af3bca-5f93-42d1-adb0-e414bf1c3c4f.png" width="138" title="Samuel Batista"/>
+<a href="https://www.github.com/Lucianocbarbosa" ><img src="https://i.postimg.cc/zfDHXWR5/Whats-App-Image-2022-02-13-at-16-11-49.jpg" width="138" title="Luciano Barbosa"/></a> 
+<a href="https://www.github.com/ludyklima" ><img src="https://i.postimg.cc/ZRZMB7QQ/d76ae29f-4ac4-4a39-b6e9-80f24486541d.png" width="138" title="Ludmilla Khatarina"/></a> 
+<a href="https://www.github.com/smdbtib" ><img src="https://i.postimg.cc/tgFcgQBP/80af3bca-5f93-42d1-adb0-e414bf1c3c4f.png" width="138" title="Samuel Batista"/>
 </p></a> 
 
 
