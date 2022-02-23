@@ -1,5 +1,6 @@
 const Owner = require("../models/Owner")
 const Pet = require("../models/Pet")
+const Scheduling = require('../models/Scheduling')
 
 class OwnerController {
 
@@ -66,13 +67,27 @@ class OwnerController {
 
     static async deleteOwner(req, res) {
 
-        const owner = await Owner.findOne({ where: { id: req.body.id } })
+        const owner = await Owner.findOne({ where: { id: req.body.id } }, { raw: true })
         if (!owner) {
             res.status(406).json({ message: 'owner-parameter-null' })
             return;
         };
-   
-        await Owner.destroy({ include: Pet, where: { id: req.body.id } })
+
+        const pets = await Pet.findAll({ where: { OwnerId: owner.id } }, { raw: true })
+
+        const scheduling = await Scheduling.findAll()
+
+        pets.forEach((pet) => {
+            scheduling.forEach(() => {
+                Scheduling.destroy({ where: { PetId: pet.id } })
+            })
+        })
+
+        pets.forEach(() => {
+            Pet.destroy({ where: { OwnerId: owner.id } })
+        })
+
+        await Owner.destroy({ where: { id: req.body.id } })
 
         res.status(202).json({ message: `owner-${req.body.id}-and-pets-deleted` })
 
