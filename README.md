@@ -10,7 +10,7 @@
 
 > ## Entregáveis
 - Gerência de Petshop
-  - Construir uma REST API com MySQL que gerencia os pets e os seus respectivos donos, o sistema deve possibilitar o agendamento de algum serviço disponibilizado pelo petshop (banho, tosa, etc).
+  - Construir uma REST API com MySQL que gerencia os pets e os seus respectivos donos. O sistema deve possibilitar o agendamento de algum serviço disponibilizado pelo petshop (banho, tosa, etc).
   - Requisitos: 
     - Deve realizar CRUD de pets, donos e agendamentos de serviço;
     - Deve exibir quais são os serviços agendados para uma determinada data.
