@@ -3,16 +3,28 @@
 <br>
 
 > ## Sobre o Projeto
-> Desenvolvimento de CRUD (Create + Read + Update + Delete) em Projeto de PetShop desenvolvido em NodeJs (com MySQL), durante o curso de Desenvolvimento Fullstack da [SoulCode Academy](https://soulcodeacademy.org/). Realizado pelo { Squad2 }
+> Desenvolvimento de CRUD (Create + Read + Update + Delete) em Projeto de PetShop desenvolvido em NodeJs, com Sequelize e MySQL, durante o curso de Desenvolvimento Fullstack da [SoulCode Academy](https://soulcodeacademy.org/). Realizado pelo { Squad2 }.
 
-<br>
-<br>
+</br>
+</br>
+
+> ## Entregáveis
+- Gerência de Petshop
+  - Construir uma REST API com MySQL que gerencia os pets e os seus respectivos donos, o sistema deve possibilitar o agendamento de algum serviço disponibilizado pelo petshop (banho, tosa, etc).
+  - Requisitos: 
+    - Deve realizar CRUD de pets, donos e agendamentos de serviço;
+    - Deve exibir quais são os serviços agendados para uma determinada data.
+
+</br>
+</br>
 
 > ## Tecnologias Utilizadas 🧰
 
 <p align="left">
-<img  alt="git" src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white" />
-<img align="left" alt="nodejs" src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white" />
+<img alt="nodejs" src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white" />
+<img alt="sequelize" src="https://img.shields.io/badge/Sequelize-52B0E7?style=for-the-badge&logo=Sequelize&logoColor=white"/>
+<img alt="expressjs" src="https://img.shields.io/badge/express.js-%23404d59.svg?style=for-the-badge&logo=express&logoColor=%2361DAFB"/>
+<img alt="mysql" src="https://img.shields.io/badge/mysql-%2300f.svg?style=for-the-badge&logo=mysql&logoColor=white" />
 </p>
 
 
