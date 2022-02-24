@@ -6,7 +6,7 @@ const PetController = require('../controllers/PetController')
 //create pet
 router.post('/create', PetController.createPet)
 //show pets
-router.get('/:id', PetController.showPets)
+router.get('/', PetController.showPets)
 //list pet to update
 router.get('/update/:id', PetController.listPetToUpdate)
 //edit pet

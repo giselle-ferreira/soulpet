@@ -1,5 +1,6 @@
 const Pet = require('../models/Pet')
 const Owner = require('../models/Owner')
+const Scheduling = require('../models/Scheduling')
 
 class PetController {
 
@@ -28,24 +29,33 @@ class PetController {
         res.status(202).json({ message: `pet-${pet.name}-created` })
     }
 
+    
     static async showPets(req, res) {
+             
+        const pet = await Pet.findAll(
+            {                
+                include: [
+                    { model: Owner },
+                    { model: Scheduling }
+                ]})     
 
-        const owner = await Owner.findOne({ include: Pet, where: { id: req.params.id } })
-
-        if (!owner) {
-            res.status(401).json({ message: 'pet-owner-invalid' })
+        if (!pet) {
+            res.status(402).json({ message: 'list-pet-parameter-null' })
             return;
         };
 
-
-        res.status(201).json({ owner })
-        // ({ owner: owner.get({ plain: true })})
+        res.status(201).json(pet)
 
     }
 
 
     static async listPetToUpdate(req, res) {
-        const pet = await Pet.findOne({ where: { id: req.params.id } })
+        const pet = await Pet.findOne({
+            include: [
+            { model: Owner },
+            { model: Scheduling }
+        ]},
+            { where: { id: req.params.id } })
 
         if (!pet) {
             res.status(402).json({ message: 'pet-parameter-null' })
@@ -54,6 +64,7 @@ class PetController {
 
         res.status(200).json(pet)
     }
+
 
     static async updatePet(req, res) {
 
@@ -80,6 +91,7 @@ class PetController {
         await Pet.update(pet, { where: { id: req.body.id } })
         res.status(200).json({ message: `pet-${pet.name}-successfully-updated` })
     }
+
 
     static async deletePet(req, res) {
 

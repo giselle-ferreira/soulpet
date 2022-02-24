@@ -23,7 +23,14 @@ class OwnerController {
     }
 
     static async showOwners(req, res) {
-        const owner = await Owner.findAll({ raw: true })
+        const owner = await Owner.findAll(
+            {
+                include: {
+                    model: Pet,
+                    include: {
+                        model: Scheduling
+                    }
+                }}, { raw: true })
 
         if (owner.length > 0) {
             res.status(202).json(owner)
@@ -35,7 +42,13 @@ class OwnerController {
     }
 
     static async listOwnerToUpdate(req, res) {
-        const owner = await Owner.findOne({ where: { id: req.params.id } })
+        const owner = await Owner.findOne({
+            include: {
+                model: Pet,
+                include: {
+                    model: Scheduling
+                }
+            }}, { where: { id: req.params.id } })
 
         if (!owner) {
             res.status(406).json({ message: 'owner-parameter-null' })

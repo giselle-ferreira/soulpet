@@ -61,12 +61,16 @@ class SchedulingController {
             res.status(202).json({ scheduling })
         }
 
-
     }
 
     static async listSchedulingToUpdate(req, res) {
 
-        const scheduling = await Scheduling.findOne({ where: { id: req.params.id } })
+        const scheduling = await Scheduling.findOne({
+            include: {
+                model: Pet,
+                include: Owner
+            }
+        }, { where: { id: req.params.id } })
 
         if (!scheduling) {
             res.status(406).json({ message: `scheduling-parameter-null` })
